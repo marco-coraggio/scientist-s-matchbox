@@ -1,5 +1,6 @@
-![logo_and_title_scientist's_matchbox](https://github.com/Galileji/scientist-s-matchbox/assets/63428646/e64d6295-b472-434d-af0b-941ced77a388)
+![logo_title_ack_scientist's_matchbox_dark_background](https://github.com/user-attachments/assets/520b3631-469f-4f66-9008-82ac0cd86042)
 
 # Scientist's Matchbox
 A collection of carefully designed templates and guides to enhance scientific production
+
 
