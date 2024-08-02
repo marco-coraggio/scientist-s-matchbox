@@ -10,6 +10,6 @@ Scientist's Matchbox is a free collection of **carefully crafted templates and g
 
 ✒️ [Attribution](https://www.marco-coraggio.com/scientist-s-matchbox#h.dfho2wvs6hbz)
 
-👨🏻 [The Author](https://www.marco-coraggio.com)
+👨🏻 [The author](https://www.marco-coraggio.com)
 
 📮 Contact: [marcocoraggio@live.com](mailto:marcocoraggio@live.com)
