@@ -5,4 +5,4 @@ A collection of carefully designed templates and guides to enhance scientific pr
 
 📋 [Desctiption and content](https://www.marco-coraggio.com/scientist-s-matchbox)
 
-⬇️ [Releases](https://github.com/marco-coraggio/scientist-s-matchbox/releases)
+📦 [Releases](https://github.com/marco-coraggio/scientist-s-matchbox/releases)
