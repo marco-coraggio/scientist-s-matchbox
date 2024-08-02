@@ -2,4 +2,7 @@
 
 # Scientist's Matchbox
 A collection of carefully designed templates and guides to enhance scientific production.
-All details avialble here: [Scientist's Matchbox](https://www.marco-coraggio.com/scientist-s-matchbox).
+
+ℹ️ [Desctiption and content](https://www.marco-coraggio.com/scientist-s-matchbox).
+
+⬇️ [Releases](https://github.com/marco-coraggio/scientist-s-matchbox/releases).
