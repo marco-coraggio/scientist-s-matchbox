@@ -6,3 +6,9 @@ A collection of carefully designed templates and guides to enhance scientific pr
 📋 [Desctiption and content](https://www.marco-coraggio.com/scientist-s-matchbox)
 
 📦 [Releases](https://github.com/marco-coraggio/scientist-s-matchbox/releases)
+
+✒️ [Attribution](https://www.marco-coraggio.com/scientist-s-matchbox#h.dfho2wvs6hbz)
+
+👨🏻 [The Author](https://www.marco-coraggio.com)
+
+📮 Contact: [marcocoraggio@live.com](mailto:marcocoraggio@live.com)
