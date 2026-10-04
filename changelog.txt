@@ -1,6 +1,10 @@
 # Changelog
 -----------
 
+- v2.4, 2026-10-04.
+Added source files and binaries to the repository.
+Modified paragraph environment formatting in report template.
+
 - v2.3, 2026-07-21.
 Fixed bugs in new beamer presentation template.
 
