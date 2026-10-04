@@ -36,5 +36,5 @@ Updated the wide template for presentations in PowerPoint to better align the ti
 - v1.1.0, 2024-02-05.
 Updated "latex_equation_environments_multiple_lines.pdf" to v2.0, adding source code for each block of equations (thanks to Adriano Mele for the suggestion!).
 
-- v1.0.0, 2024-02-04. 
+- v1.0.0, 2024-02-04.
 First relase.
