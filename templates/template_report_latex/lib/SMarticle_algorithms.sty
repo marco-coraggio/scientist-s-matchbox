@@ -1,0 +1,16 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[ruled,vlined,linesnumbered]{algorithm2e}  % algorithms
+\RequirePackage[svgnames]{xcolor}       % colors
+
+
+% ALGORITHMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Remove right hand margin in algorithm (might need \RequirePackage{etoolbox})
+\patchcmd{\@algocf@start}% <cmd>
+  {-1.5em}% <search>
+  {0pt}% <replace>
+  {}{}% <success><failure>
+
+\SetKwComment{tcc}{ {$\triangleright$} }{}  % comment C style
+\SetKwComment{tcp}{ {$\triangleright$} }{}  % comment C++ style
+\newcommand{\myCommentStyle}[1]{\footnotesize\sffamily\textcolor{gray}{#1}}
+\SetCommentSty{myCommentStyle}

@@ -1,0 +1,185 @@
+% DOCUMENT INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myDocType}{Report}  % eg, Research report, Preprint, blank...
+\newcommand{\myAuthor}{%
+  \styleAuthor Marco Coraggio\\
+  \styleAffiliation v2.2 | Part of \href{https://www.marco-coraggio.com/scientist-s-matchbox}{Scientist's Matchbox}
+  \and
+  \styleAuthor Author 2\\
+  \styleAffiliation Affiliation author 2
+  \and
+  \styleAuthor Author 3\\
+  \styleAffiliation Affiliation author 3
+  }
+\newcommand{\myTitle}{Template for reports in \LaTeX}
+\newcommand{\myHeaderAuthorTitle}{N.~Surname et al.: Title or short title if necessary} % leave blank to show nothing. If deleted, default is used: \myTitle
+\newcommand{\fixedDate}{31 January 2099}  % used with appropriate class option
+
+
+% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class ------------------------------------------
+\documentclass[authorrefs]{lib/SMarticle}
+
+% Options guide
+% - all options in article class (new default: a4paper)
+% - headers: looseheaders (default), thightheaders
+% - date: todaydate (default), nodate, fixeddate (requires \fixedDate)
+% - bibliography style: numberrefs (IEEEtran; default), authorrefs (IEEEtranSN). Note when changing from numberrefs to authorrefs, it may be necessary to run latexmk twice or delete the .bbl file.
+
+
+% Front matter -----------------------------------
+\begin{document}
+\thanks{%
+  This work was in part supported by\dots\\
+  %
+  N.~Surname is with the University of\dots (email@domain.it).
+  N.~Surname is with the University of\dots (email@domain.it).\\
+  \\
+  \textcopyright\ 2019 Marco Coraggio, \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA} (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License).
+}
+\maketitle
+\thispagestyle{firstpage}  % apply page style for first page
+\begin{abstract}
+  In this document, \dots
+\end{abstract}
+
+\tableofcontents
+%\clearpage  % uncomment to break page after table of contents
+
+
+% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------
+\section{Section 1}%
+\label{sec:section_1}
+
+\cite{smith2024interesting}
+\begin{theorem}[My theorem]
+  \begin{equation}
+    a = b
+  \end{equation}
+\end{theorem}
+%
+\begin{proof}
+  Trivial!
+\end{proof}
+
+Imaginary unit with ``\texttt{\textbackslash imaginary}'': $\imaginary$ \par
+Euler number with ``\texttt{\textbackslash euler}'': $\euler$ \par
+Transpose with ``\texttt{\textbackslash T}'': $x\T$ \par
+Upright math with ``\texttt{\textbackslash R\{\}}'': $\R{x}$ \par
+Operator with ``\texttt{\textbackslash ON\{\}}'': $\ON{x}$ \par
+Bold math with ``\texttt{\textbackslash B\{\}}'': $\B{x}$ \par
+Mathbb with ``\texttt{\textbackslash BB\{\}}'': $\BB{X}$ \par
+Mathcal with ``\texttt{\textbackslash C\{\}}'': $\C{X}$ \par
+Absolute value with ``\texttt{\textbackslash abs\{\}}'': $\abs{x}$ \par
+Norm with ``\texttt{\textbackslash norm\{\}}'': $\norm{x}$ \par
+
+
+%-------------------------------------------------
+\subsection{Subsection 1.1}%
+\label{subsec:subsection_1_1}
+
+Important equation: \boxMath{x = a + b}.
+
+\paragraph{Paragraph} Text.
+
+\subparagraph{Subparagraph} Text.
+
+
+\begin{figure}[t]
+   \centering
+   \href{https://www.marco-coraggio.com/scientist-s-matchbox}{\includegraphics[max width=0.7\columnwidth]{logo_title_scientist's_matchbox.png}}
+   \caption{My caption.}
+   \label{fig:fig_label}
+\end{figure}
+
+\begin{figure}[t]
+   \centering
+   \subfloat[subcaption]{\includegraphics[max width=0.49\columnwidth]{example-image-a}
+       \label{fig:fig_label_2}}
+   \subfloat[subcaption]{\includegraphics[max width=0.49\columnwidth]{example-image-b}
+       \label{fig:fig_label_3}}
+   \caption{(a) My caption. (b) My caption.}
+   \label{fig:whole_figure}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{l|lll}
+      \toprule
+      Column 1  &  Column 2  &  Column 3  &  Column 4  \\
+      \midrule
+      \multicolumn{4}{c}{\textit{Group 1}}\\
+      \noalign{\smallskip}
+      Row 1  &  value  &  value  &  value  \\
+      Row 2  &  value  &  value  &  value  \\
+      \midrule
+      \multicolumn{4}{c}{\textit{Group 2}}\\
+      \noalign{\smallskip}
+      Row 1  &  value  &  value  &  value  \\
+      Row 2  &  value  &  value  &  value  \\
+      \bottomrule
+  \end{tabular}
+  \caption{My caption.}
+  \label{tab:tab_label}
+  \end{table}
+
+\begin{algorithm}[t]
+  \caption{Name of algorithm}
+  \label{alg:algorithm_label}
+  %
+  %\DontPrintSemicolon  % to avoid printing semicolons
+  \SetKwProg{Fn}{Function}{}{}
+  \SetKwInput{KwParam}{Parameters}
+  \SetKwFunction{myKwFun}{fun\textunderscore name}
+  %
+  \KwIn{input 1; input 2.}%  
+  \KwOut{output 1; output 2.}
+  \KwParam{param 1; param 2.}
+  %
+  \BlankLine
+  %
+  $a \leftarrow \texttt{fun\textunderscore name}(1)$\; \label{line:a}% close commands with \; 
+  $b \leftarrow 2$%
+    \tcp*{a comment} % this comment automatically closes line
+  \While(\tcp*[f]{a comment for a line without end}){$a > 0$}{
+    $c \leftarrow 3$\;
+    \lIf{$a <1 $}{something, referencing instruction \ref{line:a}} % l makes loop in one line
+  }
+  \BlankLine
+  \setcounter{AlgoLine}{0}
+  %
+  \Fn{\myKwFun{myargs}}{
+      do something\;
+  }
+  % more info: http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+\end{algorithm}
+
+
+% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{\bibliographyStyleName}
+\bibliography{res/references.bib}
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESOURCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Appendices and acknowledgment ------------------
+% do not use \section anymore after \appendix, only \section* is possibly needed. If single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+
+% If more than one appendix
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%\section{}
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+%The authors would like to thank...
+%-------------------------------------------------

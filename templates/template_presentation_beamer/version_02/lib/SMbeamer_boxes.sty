@@ -1,0 +1,61 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[breakable,skins,raster]{tcolorbox}    
+
+\RequirePackage{\CurrentFilePath/SMbeamer_colors}
+\RequirePackage{varwidth} 
+
+
+% BOXES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{  % define styles
+  styleBoxInfo/.style={
+    enhanced,
+    top=0.6mm, bottom=0.6mm, left=0.6mm, right=0.6mm,
+    boxrule=0.5pt,
+    arc=0mm,
+    colframe=colorBoxInfo, coltext=colorTextLight,
+    colback=colorFrame, colbacktitle=colorFrame,
+    coltitle=colorTextLight,
+    hbox,
+  },
+  styleboxTheorem/.style={
+    enhanced,
+    top=0.8mm, bottom=0.8mm, left=0.8mm, right=0.8mm,
+    boxrule=0.75pt,
+    arc=0mm,
+    colframe=colorAccent!50, coltext=colorText,
+    colback=colorAccentVeryLight, colbacktitle=colorAccentVeryLight,
+    coltitle=colorText,
+    fuzzy shadow={0mm}{0mm}{-0.5mm}{0.2mm}{black!30!white},
+  },
+  styleboxKey/.style={
+    enhanced,
+    top=0.8mm, bottom=0.8mm, left=0.8mm, right=0.8mm,
+    boxrule=0.5pt,
+    arc=0mm,
+    colframe=colorKeyFrame, coltext=colorText,
+    colback=colorKeyBg,
+    fuzzy shadow={0mm}{0mm}{-0.5mm}{0.2mm}{black!30!white},
+    hbox,
+  },
+}
+\newcommand{\boxInfo}[1]{%
+  \raggedleft\begin{tcolorbox}[styleBoxInfo]%
+    \scriptsize #1%
+  \end{tcolorbox}\par
+}
+\newcommand{\boxTheorem}[2][]{%
+  \begin{tcolorbox}[styleboxTheorem]%
+    \if\relax\detokenize{#1}\relax
+      #2%
+    \else
+      \textbf{#1.}\ \ #2%
+    \fi
+  \end{tcolorbox}
+}
+\newcommand{\boxKey}[1]{%
+  \centering\begin{tcolorbox}[styleboxKey]%
+    \begin{varwidth}{0.8\textwidth}\centering\small%
+    #1%
+    \end{varwidth}
+  \end{tcolorbox}
+}

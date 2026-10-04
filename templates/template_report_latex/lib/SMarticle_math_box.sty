@@ -1,0 +1,17 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[svgnames]{xcolor} % change colors
+
+\RequirePackage{\CurrentFilePath/SMarticle_colors}
+
+
+% MATH BOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\fboxrule{1pt}
+\newcommand*{\boxMathAux}[3]{%
+  % #1: optional arg. for color model, #2: color specification, #3: formula
+  \begingroup
+    \colorlet{cb@saved}{.}%
+    \color#1{#2}\boxed{\color{cb@saved}#3}%
+  \endgroup
+}
+
+\newcommand{\boxMath}[1]{\boxMathAux{}{colorAccent}{#1}}

@@ -1,0 +1,87 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{\CurrentFilePath/SMbeamer_colors}
+\RequirePackage{\CurrentFilePath/SMbeamer_measurements}
+\usetikzlibrary{shadows.blur}
+
+
+% Borders ----------------------------------------
+\newcommand{\drawBorders}{%
+    \begin{tikzpicture}[remember picture, overlay]%
+      \shade[shading=axis, top color=colorAccent, bottom color=colorAccentDark, shading angle=45,
+        preaction={blur shadow={shadow xshift=0pt,shadow yshift=-1.5pt,shadow blur radius=4pt,shadow blur steps=12,shadow opacity=40}}]
+      (current page.north west)
+      rectangle
+      ([yshift=-\frameBorderHeight]current page.north east);%
+      %
+      \shade[shading=axis, top color=colorAccent, bottom color=colorAccentDark, shading angle=45,
+        preaction={blur shadow={shadow xshift=0pt,shadow yshift=1.5pt,shadow blur radius=4pt,shadow blur steps=12,shadow opacity=40}}]
+      (current page.south west)
+      rectangle
+      ([yshift=\frameBorderHeight]current page.south east);%
+    \end{tikzpicture}%
+}
+
+
+% Frames -----------------------------------------
+\let\oldsection\section
+\renewcommand{\section}[2][]{%
+  \begingroup%
+    \setbeamertemplate{background}{%
+      \begin{tikzpicture}[remember picture, overlay]%
+        \shade[top color=colorAccent, bottom color=colorAccentDark, shading angle=45]
+        (current page.north west) rectangle (current page.south east);%
+      \end{tikzpicture}}%
+    \setbeamertemplate{footline}{}%
+    \if\relax\detokenize{#1}\relax
+      \oldsection{#2}%
+    \else
+      \oldsection[#1]{#2}%
+    \fi
+  \endgroup%
+}
+
+\let\oldsubsection\subsection
+
+\renewcommand{\subsection}[2][]{%
+  \begingroup%
+    \setbeamertemplate{background}{%
+      \begin{tikzpicture}[remember picture, overlay]%
+        \shade[top color=colorFrame, bottom color=colorSubSection, shading angle=45]
+        (current page.north west) rectangle (current page.south east);%
+      \end{tikzpicture}}%
+    \if\relax\detokenize{#1}\relax
+      \oldsubsection{#2}%
+    \else
+      \oldsubsection[#1]{#2}%
+    \fi
+    %
+    \begin{frame}[plain,c]%
+      \centering\vfill%
+      {\large\bfseries\color{colorAccent}#2}\par%
+      \vfill%
+    \end{frame}%
+  \endgroup%
+}
+
+\newenvironment{frameBorders}{%
+  \setbeamertemplate{background}{\drawBorders}%
+  \begin{frame}[plain,c]\relax}
+  {\end{frame}}
+
+\newcommand{\referencesFrame}{%
+  \setbeamercolor{bibliography item}          {fg=colorText}%
+  \setbeamercolor{bibliography entry author}  {fg=colorText}%
+  \setbeamercolor{bibliography entry title}   {fg=colorText}%
+  \setbeamercolor{bibliography entry location}{fg=colorText}%
+  \setbeamercolor{bibliography entry note}    {fg=colorText}%
+  \setbeamerfont{bibliography item}           {size=\footnotesize}%
+  \setbeamerfont{bibliography entry author}   {size=\footnotesize}%
+  \setbeamerfont{bibliography entry title}    {size=\footnotesize}%
+  \setbeamerfont{bibliography entry location} {size=\footnotesize}%
+  \setbeamerfont{bibliography entry note}     {size=\footnotesize}%
+  \renewcommand*{\bibfont}{\footnotesize}%  % necessary to set interline spacing
+  \setlength{\bibitemsep}{0.4\baselineskip}%
+  \begin{frame}[allowframebreaks]{References}
+    \printbibliography[heading=none]
+  \end{frame}%
+}

@@ -1,0 +1,77 @@
+﻿# Template for structured text files
+------------------------------------
+* Marco Coraggio | v1.0 | Part of the Scientist's Matchbox
+
+Don't underestimate the humble text files. They are great for simple unformatted documents, as they are quick, readable, and portable. They just need a few rules to format structure.
+
+
+## Lists
+--------
+
+Bulleted lists:
+
+- one
+- two
+  -- two.one (two spaces for indentation)
+  -- two.two
+    --- two.two.one
+	--- two.two.three
+- three
+
+Numbered lists:
+	
+1. First
+2. Second
+  2.1. Second.First
+  2.2. Second.Second
+    2.2.1 Second.Second.First
+    2.2.2 Second.Second.Second
+3. Third
+
+Spacing rules:
+
+- 0 blank lines before the title.
+- 2 blank lines before section headers.
+- 1 blank line before paragraphs.
+- 1 blank line berfore lists.
+
+
+## Example of structure
+------------------------
+
+	# Title
+	-------
+	* Authorship/dates/versioning
+
+	A paragraph.
+
+
+	## Section header
+	-----------------
+
+	A paragraph.
+
+
+	### Subsection header
+	---------------------
+
+	A paragraph.
+
+
+	### Subsubsection header
+	------------------------
+
+	A paragraph.
+
+
+	## With very long section headers keep underline capped at 50 characters
+	--------------------------------------------------
+	
+	A paragraph.
+	
+
+## Copyright info
+-----------------
+
+(c) 2024 Marco Coraggio, CC BY-NC-SA (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License).
+https://creativecommons.org/licenses/by-nc-sa/4.0/

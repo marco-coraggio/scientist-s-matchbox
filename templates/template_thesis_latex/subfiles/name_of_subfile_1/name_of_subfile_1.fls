@@ -1,0 +1,8 @@
+PWD c:\Users\marco\OneDrive\lavoro_marco\GEN_template_e_moduli\scientist's_matchbox_dev\development_released\templates\template_thesis_latex\subfiles\name_of_subfile_1
+INPUT C:\Users\marco\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\marco\OneDrive\lavoro_marco\GEN_template_e_moduli\scientist's_matchbox_dev\development_released\templates\template_thesis_latex\subfiles\name_of_subfile_1\name_of_subfile_1.tex
+OUTPUT name_of_subfile_1.log
+INPUT C:\Users\marco\AppData\Local\Programs\MiKTeX\tex\latex\subfiles\subfiles.cls
+INPUT C:\Users\marco\AppData\Local\Programs\MiKTeX\tex\latex\subfiles\subfiles.cls
+INPUT C:\Users\marco\AppData\Local\Programs\MiKTeX\tex\latex\import\import.sty
+INPUT C:\Users\marco\AppData\Local\Programs\MiKTeX\tex\latex\import\import.sty

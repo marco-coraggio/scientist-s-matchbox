@@ -1,0 +1,67 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\openbox\undefined      % avoids clash between amsthm and math font
+\RequirePackage{amsthm}     % customize theorems
+\RequirePackage[breakable,skins]{tcolorbox} % boxes
+\RequirePackage[svgnames]{xcolor}           % colors
+
+\RequirePackage{\CurrentFilePath/SMarticle_colors}
+
+
+% THEOREMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mythmstyle}%  % name of style
+{0.7em}%                       % space above
+{1em}%                         % space below
+{\itshape}%                    % body font
+{}%                            % indent amount
+{\sffamily \color{colorAccent}}%  % theorem head font
+{.}%                           % punctuation after theorem head
+{ }%                           % space after theorem head, ' ', or \newline
+{{\bfseries\thmname{#1}\thmnumber{ #2}}\thmnote{ (#3)}}  % theorem head spec (can be empty, meaning ``normal'')
+
+\theoremstyle{mythmstyle}			 % use style you just defined
+
+\newtheorem{theoremInnerEnv}{Theorem}[section]
+\newtheorem{definitionInnerEnv}{Definition}[section]
+\newtheorem{assumptionInnerEnv}{Assumption}[section]
+\newtheorem{propositionInnerEnv}{Proposition}[section]
+\newtheorem{lemmaInnerEnv}{Lemma}[section]
+\newtheorem{corollaryInnerEnv}{Corollary}[section]
+\newtheorem{problemInnerEnv}{Problem}[section]
+\newtheorem{remarkInnerEnv}{Remark}
+\newtheorem{conjectureInnerEnv}{Conjecture}[section]
+
+\tcbset{styleTheorem/.style={
+    enhanced, parbox=false, breakable, frame hidden,
+		arc=0pt, outer arc=0pt,
+    top=1ex, bottom=1ex, left=1ex, right=1ex,
+    colback=colorAccentLight,
+}}
+
+% Wrappers around inner amsthm environments to add the tcolorbox 
+\newenvironment{theorem}[1][]%
+  {\begin{tcolorbox}[styleTheorem]\begin{theoremInnerEnv}[#1]}
+  {\end{theoremInnerEnv}\end{tcolorbox}}
+\newenvironment{definition}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{definitionInnerEnv}[#1]}
+	{\end{definitionInnerEnv}\end{tcolorbox}}
+\newenvironment{assumption}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{assumptionInnerEnv}[#1]}
+	{\end{assumptionInnerEnv}\end{tcolorbox}}
+\newenvironment{proposition}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{propositionInnerEnv}[#1]}
+	{\end{propositionInnerEnv}\end{tcolorbox}}
+\newenvironment{lemma}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{lemmaInnerEnv}[#1]}
+	{\end{lemmaInnerEnv}\end{tcolorbox}}
+\newenvironment{corollary}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{corollaryInnerEnv}[#1]}
+	{\end{corollaryInnerEnv}\end{tcolorbox}}
+\newenvironment{problem}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{problemInnerEnv}[#1]}
+	{\end{problemInnerEnv}\end{tcolorbox}}
+\newenvironment{remark}%
+	{\begin{tcolorbox}[styleTheorem]\begin{remarkInnerEnv}}
+	{\end{remarkInnerEnv}\end{tcolorbox}}
+\newenvironment{conjecture}[1][]%
+	{\begin{tcolorbox}[styleTheorem]\begin{conjectureInnerEnv}[#1]}
+	{\end{conjectureInnerEnv}\end{tcolorbox}}

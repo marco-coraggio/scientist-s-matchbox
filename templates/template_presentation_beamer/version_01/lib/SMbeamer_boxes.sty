@@ -1,0 +1,37 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[breakable,skins,raster]{tcolorbox}    
+
+\RequirePackage{\CurrentFilePath/SMbeamer_colors}
+
+
+% BOXES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{  % define styles
+  styleBoxInfo/.style={
+    enhanced,
+    top=0.6mm, bottom=0.6mm, left=0.6mm, right=0.6mm,
+    boxrule=0.5pt,
+    arc=0mm,
+    colframe=colorBoxInfo, coltext=colorTextLight,
+    colback=colorFrame, colbacktitle=colorFrame,
+    coltitle=colorTextLight,
+  },
+  styleboxTheorem/.style={
+    enhanced,
+    top=0.8mm, bottom=0.8mm, left=0.8mm, right=0.8mm,
+    boxrule=0.5pt,
+    arc=0mm,
+    colframe=colorAccent, coltext=colorText,
+    colback=colorAccentVeryLight, colbacktitle=colorAccentVeryLight,
+    coltitle=colorText,
+  },
+}
+\newcommand{\boxInfo}[1]{%  % box to add details
+    \begin{tcolorbox}[styleBoxInfo]%
+      \scriptsize #1%
+    \end{tcolorbox}
+}
+\newcommand{\boxTheorem}[1]{%  % box for theorems
+    \begin{tcolorbox}[styleboxTheorem]%
+      #1%
+    \end{tcolorbox}
+}

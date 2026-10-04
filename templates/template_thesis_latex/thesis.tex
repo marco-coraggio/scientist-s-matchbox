@@ -1,0 +1,180 @@
+% COPYRIGHT INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (c) 2019 Marco Coraggio, CC BY-NC-SA
+% (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License)  
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+% SETTINGS AND DOCUMENT INFO %%%%%%%%%%%%%%%%%%%%%
+% Settings ---------------------------------------
+\newcommand{\isUseListFiguresTables}{1}
+\newcommand{\myBibliographyStyle}{1}  % 0: numbered (IEEEtran), 1: author year (IEEEtranSN). NOTE: when changed, might need to recompile from scratch (delete file .aux)
+\newcommand{\myBibliographyFile}{resources/references.bib}
+
+% Document info ----------------------------------
+\newcommand{\myUniversity}{Name of University}
+\newcommand{\myDepartment}{Name of Department}
+\newcommand{\myKindOfThesis}{Doctoral Thesis}
+\newcommand{\myTitle}{Template for\\Theses in \LaTeX}
+\newcommand{\myAuthor}{Marco Coraggio}
+\newcommand{\myTutor}{Prof.~Name Surname}
+\newcommand{\myFulfilmentStatement}{Submitted in fulfilment of the requirements for the\\degree of Doctor of Philosophy in PhD program name.\\Coordinator: Prof.~Name Surname.
+
+\textcopyright\ 2019 Marco Coraggio, \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA}\\v1.1.0 | Part of \href{https://www.marco-coraggio.com/scientist-s-matchbox}{Scientist's Matchbox}}
+\newcommand{\myDate}{31 January 2099}
+\newcommand{\myUniversityLogo}{logo_university_colored}
+\newcommand{\myPhdLogo}{logo_title_scientist's_matchbox.png}
+
+
+% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[b5paper]{book}
+
+\makeatletter
+\def\input@path{{./resources/}}  % allows use of style file (.cls) in folder
+\makeatother
+
+\input{resources/preamble_thesis.tex}
+
+\begin{document}
+
+
+% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+% Frontispiece -----------------------------------
+\begin{titlepage}
+    \begin{center}
+        \textsc{\LARGE \color{colorAccent}\myUniversity}\\
+        \vspace*{0.6ex}
+        \emph{\myDepartment}\\
+        \vspace*{8ex}
+        \includegraphics[width=3.6cm]{\myUniversityLogo}\\
+        \vspace*{8ex}
+        \textsc{\Large\myKindOfThesis}\\        
+        {\color{colorAccent}\hrulefill}\\
+        {\huge\bf\myTitle\\}
+        {\color{colorAccent}\hrulefill}\\
+        \vspace*{6ex}             
+        \begin{minipage}{0.5\textwidth}
+            \begin{flushleft}
+                {\large \emph{Author:}\\
+                \vspace*{0.5ex}%
+                {\color{colorAccent}{\myAuthor}}}
+            \end{flushleft}
+        \end{minipage}%
+        \begin{minipage}{0.5\textwidth}
+            \begin{flushright}
+                {\large \emph{Supervisor(s):}\\
+                \vspace*{0.5ex}                    
+                {\color{colorAccent}\myTutor}}
+            \end{flushright}
+        \end{minipage}\\
+        \vspace*{12ex}        
+        \begin{minipage}{0.65\textwidth}
+            \begin{flushleft}
+                {\emph{\myFulfilmentStatement}}
+            \end{flushleft}
+        \end{minipage}\hfill%		% This percent avoids a newline
+        \begin{minipage}{0.3\textwidth}
+            \begin{flushright}
+                \includegraphics[width=\textwidth]{\myPhdLogo}
+            \end{flushright}
+        \end{minipage}\\
+        \vfill
+        {\emph{\myDate}}
+    \end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\cleardoublepage
+
+
+% Dedication -------------------------------------
+\null\vspace{\stretch{1}}
+\begin{flushright}
+    {\itshape%
+    Dedication.
+    }
+\end{flushright}
+\null\vspace{\stretch{2}}
+
+
+% Abstract ---------------------------------------
+\chapter*{Abstract}
+\addchaptertoc{Abstract} % add to the table of contents
+
+\lipsum[1]
+
+
+% Acknowledgements -------------------------------
+\makeatletter
+\@openrightfalse	% disable blank page
+\chapter*{Acknowledgements}
+\addchaptertoc{Acknowledgements} % add to the table of contents
+\@openrighttrue		% enable blank page
+\makeatother
+
+\lipsum[1]
+
+
+% Table of contents and lists --------------------
+\tableofcontents
+\markboth{}{}	% makes markleft and markright empty
+
+\ifnum\isUseListFiguresTables=1
+    \makeatletter
+    \@openrightfalse    % disable blank page
+    \listoffigures
+    \markboth{}{}
+    \listoftables
+    \markboth{}{}
+    \@openrighttrue		% enable blank page
+    \makeatother
+\fi
+
+
+% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+% Part 0 -----------------------------------------
+\graphicspath{{subfiles/introduction/figures/}}
+\subfile{subfiles/introduction/introduction.tex}
+
+
+% Part 1 -----------------------------------------
+\part[Name of part (for table of content)]{Name of part}
+\label{part:name_of_part_1}
+
+\graphicspath{{subfiles/name_of_subfile_1/figures/}}
+\subfile{subfiles/name_of_subfile_1/name_of_subfile_1.tex}
+
+\graphicspath{{subfiles/name_of_subfile_2/figures/}}
+\subfile{subfiles/name_of_subfile_2/name_of_subfile_2.tex}
+
+% Part 2 -----------------------------------------
+\part[Name of part (for table of content)]{Name of part}
+\label{part:name_of_part_2}
+
+\graphicspath{{subfiles/name_of_subfile_1/figures/}}
+\subfile{subfiles/name_of_subfile_1/name_of_subfile_1.tex}
+
+\chapter{Conclusions}
+\label{cha:conclusions}
+
+\lipsum[1]
+
+
+% Appendix ---------------------------------------
+\appendix
+\renewcommand\chaptername{Appendix}
+\titleformat{\chapter}[display]{\sffamily\bfseries\Huge\color{colorAccent}}{{\Large\chaptername~\thechapter}\hfill}{10pt}{}
+
+\chapter{Appendix name}
+
+\chapterAbstract{In this appendix, we...}
+
+\lipsum[1]
+
+
+% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{\bibliographyStyleName} % requires IEEEtran.cls file
+\bibliography{\myBibliographyFile}
+
+\end{document}

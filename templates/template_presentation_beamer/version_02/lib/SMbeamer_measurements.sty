@@ -1,0 +1,32 @@
+﻿% The standard 16:9 powerpoint presentation is:
+% 960 × 540 pt or 33.867 × 19.05 cm 
+% the standard 16:9 beamer presentation is 
+% 453 × 255 pt or 16     × 9     cm 
+% the conversion factor is 0.471875.
+
+\newcommand{\conversionFactor}{0.471875}
+% \newcommand{\convertedLength}[1]{\conversionFactor\dimexpr#1\relax}
+\newcommand{\convertedLength}[1]{\the\dimexpr\conversionFactor\dimexpr#1\relax\relax}
+
+\newlength{\sideMargin}
+\setlength{\sideMargin}{\convertedLength{1.5cm}}
+
+\newlength{\frameBorderHeight}
+\setlength{\frameBorderHeight}{\convertedLength{0.5cm}}
+
+\newlength{\bottomMargin}
+\setlength{\bottomMargin}{\convertedLength{0.5cm}}
+
+\newlength{\topMargin}
+\setlength{\topMargin}{\convertedLength{0.75cm}}
+
+\newlength{\rightMarginPageNumber}
+\setlength{\rightMarginPageNumber}{\convertedLength{0.5cm}}
+
+\newlength{\heightPageNumber}
+
+\ifbeamer@centered % [c] or none was given as class option
+	\setlength{\heightPageNumber}{\convertedLength{1.5cm}}
+\else % [t] was given
+	\setlength{\heightPageNumber}{\convertedLength{0.3cm}}
+\fi

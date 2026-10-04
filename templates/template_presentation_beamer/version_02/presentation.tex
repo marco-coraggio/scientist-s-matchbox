@@ -1,0 +1,150 @@
+% DOCUMENT INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myTitle}{Template for presentations in \LaTeX}
+\newcommand{\mySubtitle}{Subtitle}
+\newcommand{\myAuthor}{Marco Coraggio | v2.2 | Part of \href{https://github.com/marco-coraggio/scientist-s-matchbox}{Scientist's Matchbox}}
+\newcommand{\myInstitution}{Affiliation \ \ (Based on the \href{https://github.com/matze/mtheme}{Metropolis} beamer theme by Matthias Vogelgesang)}
+\newcommand{\myEventAndDate}{Name of the event or location --- 99 Month 2099}
+\newcommand{\myLogo}{\href{https://github.com/marco-coraggio/scientist-s-matchbox}{\includegraphics[height=1cm]{logo_title_scientist's_matchbox.png}}}
+
+
+% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class ------------------------------------------
+\newcommand{\myBibliographyFile}{res/references.bib}
+\documentclass[t]{lib/SMbeamer}
+
+% t: align text to top of the frame
+% c: center text vertically in the frame
+% handout: disable animations
+
+
+% Front matter -----------------------------------
+\begin{document}
+\maketitle
+
+
+% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Outline}   
+  \tableofcontents[hideallsubsections] % automatic outline
+\end{frame}
+
+
+%-------------------------------------------------
+\section{Section name}
+
+
+%-------------------------------------------------
+\subsection{Subsection name}
+
+
+\begin{frame}[fragile]{Writing tools}  % fragile useful for verbatim
+  \begin{itemize}
+    \item \alert{Important text.}
+    \item \begin{verbatim}verbatim: \documentclass{beamer} \end{verbatim}
+  \end{itemize}
+  %
+  \[
+    e = \lim_{n\to \infty} {\left(1 + \frac{1}{n}\right)}^n
+  \]
+  %
+  \boxInfo{A box for legends and details (\texttt{\textbackslash boxInfo})}
+  % 
+  \boxTheorem[Theorem]{A box for theorems (\texttt{\textbackslash boxTheorem})}
+  \boxKey{A box for key messages (\texttt{\textbackslash boxKey})}
+\end{frame}
+
+
+\begin{frame}{Columns}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item Milk 
+      \item Eggs
+      \item Potatoes
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{figure}[c]\centering
+      \includegraphics[max height=0.3\textheight]{example-image-a}
+      \caption{My caption.}
+    \end{figure}  
+  \end{columns}
+  \bigskip\bigskip
+  \begin{columns}
+  \column{0.7\textwidth}
+    \[a = b c\]
+  \column{0.3\textwidth}
+    \boxInfo{legend}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Animations}
+  \begin{itemize}
+    \item Something $\B{e}, \B{\delta}$ \pause
+    \item Something more.
+  \end{itemize}
+
+  Disable animations with \texttt{[handout]} option in \texttt{\textbackslash documentclass}.
+\end{frame}
+
+
+\begin{frame}{Figure full screen}
+  \begin{figure}
+    \centering
+    \includegraphics[max height=0.6\textheight]{example-image-a}
+    \caption{my caption.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Tables}
+  \begin{table}
+    \caption{Largest cities in the world (source: Wikipedia)}
+    \begin{tabular}{@{} lr @{}}
+      \toprule
+      City & Population\\
+      \midrule
+      Mexico City & 20,116,842\\
+      Shanghai & 19,210,000\\
+      Peking & 15,796,450\\
+      Istanbul & 14,160,467\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+
+\begin{frame}{References}
+  \begin{itemize}
+    \item Some references to showcase \footcite{smith2024interesting} \footcite{smith2025interesting} \footcite{smith2026interesting}.
+      \end{itemize}
+\end{frame}
+
+
+\begin{frame}[plain,c]
+  \centering%
+  A plain frame, without header and footer.
+\end{frame}
+
+
+\begin{frameBorders}
+  \centering%
+  \textit{Thank you for your attention.}
+  
+  {\small \color{colorAccentLight}\textit{marcocoraggio@live.com}}
+\end{frameBorders}
+
+
+% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+
+\begin{frame}{Appendix slides}
+  \begin{itemize}
+    \item Appendix slides.
+  \end{itemize}
+\end{frame}
+
+\referencesFrame
+
+
+\end{document}

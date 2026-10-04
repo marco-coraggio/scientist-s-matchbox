@@ -1,0 +1,25 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amsmath}    % further math commands
+\newcommand\hmmax{0}        % to make bm work
+\newcommand\bmmax{0}        % to make bm work
+\RequirePackage{bm}         % bold greek letters
+\RequirePackage[svgnames]{xcolor} % change colors
+
+
+% CUSTOM COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols ----------------------------------------
+\newcommand{\euler}{\mathsf{e}}
+\newcommand{\imaginary}{\mathsf{i}}
+
+
+% Modifiers --------------------------------------
+\newcommand{\T}{^{\mathsf{T}}}
+\newcommand{\R}[1]{\mathrm{#1}}
+\newcommand{\ON}[1]{\operatorname{#1}}
+\newcommand{\B}[1]{\if#1\relax\bm{#1}\else\mathbf{#1}\fi} % bold text
+\renewcommand{\vec}[1]{\if#1\relax\bm{#1}\else\mathbf{#1}\fi} % vectors
+\newcommand{\mat}[1]{\if#1\relax\bm{#1}\else\mathbf{#1}\fi}   % matrices
+\newcommand{\BB}[1]{\mathbb{#1}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}

@@ -1,0 +1,39 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.6)  18 JUL 2024 18:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/marco/OneDrive/lavoro_marco/GEN_template_e_moduli/scientist's_matchbox_dev/development_released/templates/template_thesis_latex/subfiles/name_of_subfile_1/name_of_subfile_1.tex
+(c:/Users/marco/OneDrive/lavoro_marco/GEN_template_e_moduli/scientist's_matchbox_dev/development_released/templates/template_thesis_latex/subfiles/name_of_subfile_1/name_of_subfile_1.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
+(C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+Preamble taken from file `../../main.tex'
+(C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+)
+
+! LaTeX Error: File `../../main.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.cls:45: Emergency stop.
+<read *> 
+         
+l.45 \input{\preamble@file}
+                           ^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 77 strings out of 474370
+ 2394 string characters out of 5740536
+ 1925754 words of memory out of 5000000
+ 22568 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,0n,55p,319b,18s stack positions out of 10000i,1000n,20000p,200000b,200000s
+C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.cls:45:  ==> Fatal error occurred, no output PDF file produced!

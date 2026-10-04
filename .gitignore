@@ -1,0 +1,11 @@
+﻿templates/template_presentation_beamer/version_01/tmp/
+templates/template_presentation_beamer/version_01/tmp/*.synctex.gz
+
+templates/template_presentation_beamer/version_02/tmp/
+templates/template_presentation_beamer/version_02/tmp/*.synctex.gz
+
+templates/template_report_latex/tmp/
+templates/template_report_latex/*.synctex.gz
+
+templates/template_thesis_latex/tmp/
+templates/template_thesis_latex/*.synctex.gz

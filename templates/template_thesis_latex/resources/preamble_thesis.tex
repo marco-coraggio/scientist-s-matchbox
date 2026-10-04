@@ -1,0 +1,102 @@
+﻿% COPYRIGHT INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (c) 2019 Marco Coraggio, CC BY-NC-SA
+% (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License)  
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+
+% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text Packages ----------------------------------
+\usepackage{newtxtext}        % text font, must be before math font
+\usepackage[utf8]{inputenc}   % foreign accents
+\usepackage[T1]{fontenc}      % font encodings and compatibility 
+\usepackage[svgnames]{xcolor} % change colors
+\usepackage{lipsum}	          % automatic text blocks
+
+
+% Math Packages ----------------------------------
+\usepackage{newtxmath}        % font for math
+
+
+% Figures packages -------------------------------
+\usepackage{graphicx}	      % allows figures
+
+
+% Structure Packages -----------------------------
+\usepackage{geometry}		% for margins
+\usepackage{fancyhdr}       % needed to define custom headers/footers
+\usepackage[nobottomtitles*]{titlesec}       % custom section titles
+\usepackage{hyperref}		% custom abstract
+\usepackage{subfiles}		% to divide large text in multiple .tex
+
+
+% STRUCTURE AND SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%
+% Citations --------------------------------------
+\ifnum\myBibliographyStyle=0       % numbered references
+	\usepackage[numbers]{natbib}
+	\newcommand{\bibliographyStyleName}{IEEEtran}
+\else\ifnum\myBibliographyStyle=1  % author-year references
+	\usepackage[square]{natbib}
+	\newcommand{\bibliographyStyleName}{IEEEtranSN}
+	\renewcommand{\cite}{\citep} 
+\else
+	\GenericError{}{Value of \protect\myBibliographyStyle\space is not acceptable}{}{}
+\fi\fi
+
+
+% Various Settings -------------------------------
+\graphicspath{{figures/}}   % set images directory
+\numberwithin{equation}{chapter}	% equations numbered according to chapters
+\allowdisplaybreaks % to page-break align equations
+\newcommand{\addchaptertoc}[1]{\addcontentsline{toc}{chapter}{#1}} % add chapters to table of content
+
+
+% Layout -----------------------------------------
+\geometry{top=3cm, bottom=3cm}
+
+
+% Colors -----------------------------------------
+\definecolor{myBlue}{HTML}{175ca1}
+\colorlet{colorAccent}{myBlue}
+\hypersetup{                % set hyperlinks color
+    colorlinks,
+    linkcolor={DodgerBlue},
+    citecolor={DodgerBlue},
+    urlcolor={DodgerBlue}
+}
+
+
+% Headers and Footers ----------------------------
+\pagestyle{fancy} % Enables the custom headers/footers
+\renewcommand{\headrulewidth}{0.4pt} % Thin header rule
+\renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
+\let\oldheadrule\headrule
+\let\oldfootrule\footrule
+\renewcommand{\headrule}{\color{colorAccent}\oldheadrule}
+\renewcommand{\footrule}{\color{colorAccent}\oldfootrule}
+\renewcommand{\chaptermark}[1]{\markboth{{\chaptername}\ \thechapter. \ #1}{}}
+%
+\fancyhead[OR]{\sffamily\footnotesize \color{colorAccent}{\leftmark}}
+\fancyhead[EL]{\sffamily\footnotesize \nouppercase{\color{colorAccent}{\rightmark}}}
+\fancyhead[OL,OC,EC,ER]{}
+\fancyfoot[OR,EL]{\sffamily\footnotesize \color{colorAccent}{\thepage}}
+\fancyfoot[OL,OC,EC,ER]{}
+%
+\fancypagestyle{firstpage}{
+    \fancyhead[OR]{\sffamily\footnotesize \color{colorAccent}{\leftmark}}
+    \fancyhead[EL]{\sffamily\footnotesize \nouppercase{\color{colorAccent}{\rightmark}}}
+    \fancyhead[OL,OC,EC,ER]{}
+    \fancyfoot[OR,EL]{\sffamily\footnotesize \color{colorAccent}{\thepage}}
+    \fancyfoot[OL,OC,EC,ER]{}}
+\fancypagestyle{plain}{
+    \fancyhead[OL,OC,OR,EL,EC,ER]{}
+    \fancyfoot[OR,EL]{\sffamily\footnotesize \color{colorAccent}{\thepage}}
+    \fancyfoot[OL,OC,EC,ER]{}}
+
+
+% Section Titling --------------------------------
+\titleformat{\part}[display]{\centering\sffamily\Huge\bfseries}{\textsc{\partname} \thepart \\ \vspace*{1ex}{\Huge\color{colorAccent}------ $\cdot$ ------}}{1.2ex}{\huge}
+\titleformat{\chapter}{\sffamily\bfseries\Huge\color{colorAccent}}{\thechapter \ }{10pt}{}
+\titleformat*{\section}{\Large\sffamily\color{colorAccent}}
+\titleformat*{\subsection}{\large\sffamily\color{colorAccent}}
+\titleformat*{\subsubsection}{\sffamily\itshape\color{colorAccent}}
+\newcommand*{\chapterAbstract}[1]{\paragraph{\color{colorAccent} \sffamily Abstract}{#1}\par\bigskip}

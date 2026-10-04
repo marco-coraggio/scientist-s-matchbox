@@ -1,0 +1,26 @@
+﻿% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{\CurrentFilePath/SMbeamer_colors}
+\RequirePackage{\CurrentFilePath/SMbeamer_measurements}
+
+
+% Headline ---------------------------------------
+\newcommand{\setHeadlineOn}{%
+	\setbeamertemplate{headline}{\nointerlineskip%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=\myWidthHeadFootline,dp=\myWidthHeadFootline]{colorHeadline}% 
+	\end{beamercolorbox}}%
+}
+\newcommand{\setHeadlineOff}{\setbeamertemplate{headline}{}}
+
+
+% Frames -----------------------------------------
+\newcommand{\sectionColored}[1]{%
+  \setbeamercolor{normal text}{bg=colorAccent}%
+  \setbeamercolor{section title}{fg=colorFrame}%
+  \section{\normalfont #1}%
+  \setbeamercolor{normal text}{bg=colorFrame}%
+  \setbeamercolor{section title}{fg=colorAccent}%
+}
+
+\newenvironment{frameNoTitle}%  % slide with headline and no title
+	{\setHeadlineOn\begin{frame}}%
+	{\end{frame}\setHeadlineOff}
