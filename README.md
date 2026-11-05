@@ -26,17 +26,17 @@ The resources in Scientist's Matchbox are designed to encourage the creation of 
 
 Templates:
 
-------o  Report in LaTeX
-------o  Report in Microsoft Word
-------o  Presentation in Microsoft PowerPoint (4:3 and 16:9)
-------o  Presentation in LaTeX beamer (4:3)
-------o  Thesis in LaTeX
-------o  Poster in Microsoft PowerPoint (A2 vertical)
-------o  Gantt chart in Microsoft Excel
+------o  Report in LaTeX  
+------o  Report in Microsoft Word  
+------o  Presentation in Microsoft PowerPoint (4:3 and 16:9)  
+------o  Presentation in LaTeX beamer (4:3)  
+------o  Thesis in LaTeX  
+------o  Poster in Microsoft PowerPoint (A2 vertical)  
+------o  Gantt chart in Microsoft Excel  
 
 Guides:
 
-------o  Beginner tips to write scientific documents
+------o  Beginner tips to write scientific documents  
 ------o  Miniguide to LaTeX equation environments on multiple lines
 
 
