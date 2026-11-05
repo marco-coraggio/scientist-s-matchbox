@@ -4,8 +4,11 @@
 \RequirePackage{\CurrentFilePath/SMbeamer_colors}
 \RequirePackage{varwidth} 
 
+\RequirePackage{lstautogobble} % to remove indentation in lstlisting
+
 
 % BOXES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General boxes ----------------------------------
 \tcbset{  % define styles
   styleBoxInfo/.style={
     enhanced,
@@ -59,3 +62,35 @@
     \end{varwidth}
   \end{tcolorbox}
 }
+
+
+% Code boxes -------------------------------------
+\lstset{
+	autogobble=true,
+	resetmargins=true,
+	backgroundcolor=\color{colorBackgroundCode},
+	frame=single, framerule=0.75pt, rulecolor=\color{colorFrameCode},
+	language=python,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{colorKeywordCode},
+	stringstyle=\color{colorStringCode},
+	commentstyle=\itshape\color{colorCommentCode},
+	numbers=left,
+	firstnumber=auto,
+	numberstyle=\tiny\color{colorLineNumber},
+	xleftmargin=14pt, xrightmargin=5pt,
+	framexleftmargin=1pt, framexrightmargin=1pt, framextopmargin=1pt, framexbottommargin=1pt,
+	breaklines=true,
+	keepspaces=true,
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false, tab={\color{colorTabCode}$\to$},
+	mathescape=true,
+}
+
+\lstnewenvironment{boxCode}[1][]{\lstset{#1}}{}  % an alias for lstlisting with options
+
+\NewTotalTCBox{\inlineCode}{ O{} v }{verbatim, on line,
+	boxsep=2pt, left=0pt, right=0pt, top=0pt, bottom=0pt, arc=0mm, boxrule=0.75pt,
+	colframe=colorFrameCode, colback=colorBackgroundCode}{\lstinline[#1]^#2^}

@@ -1,7 +1,7 @@
 % DOCUMENT INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\myTitle}{Template for presentations in \LaTeX}
 \newcommand{\mySubtitle}{Subtitle}
-\newcommand{\myAuthor}{Marco Coraggio | v2.2 | Part of \href{https://github.com/marco-coraggio/scientist-s-matchbox}{Scientist's Matchbox}}
+\newcommand{\myAuthor}{Marco Coraggio | v2.3 | Part of \href{https://github.com/marco-coraggio/scientist-s-matchbox}{Scientist's Matchbox}}
 \newcommand{\myInstitution}{Affiliation \ \ (Based on the \href{https://github.com/matze/mtheme}{Metropolis} beamer theme by Matthias Vogelgesang)}
 \newcommand{\myEventAndDate}{Name of the event or location --- 99 Month 2099}
 \newcommand{\myLogo}{\href{https://github.com/marco-coraggio/scientist-s-matchbox}{\includegraphics[height=1cm]{logo_title_scientist's_matchbox.png}}}
@@ -45,12 +45,23 @@
   \[
     e = \lim_{n\to \infty} {\left(1 + \frac{1}{n}\right)}^n
   \]
-  %
-  \boxInfo{A box for legends and details (\texttt{\textbackslash boxInfo})}
-  % 
-  \boxTheorem[Theorem]{A box for theorems (\texttt{\textbackslash boxTheorem})}
-  \boxKey{A box for key messages (\texttt{\textbackslash boxKey})}
 \end{frame}
+
+
+\begin{frame}[fragile]{Boxes}
+  \boxInfo{A box for legends and details (\texttt{\textbackslash boxInfo})}
+   
+  \boxTheorem[Theorem]{A box for theorems (\texttt{\textbackslash boxTheorem})}
+  
+  \boxKey{A box for key messages (\texttt{\textbackslash boxKey})}
+
+  \begin{boxCode}[language=Python]
+    A box for code (environment: boxCode)
+  \end{boxCode}
+
+  A box for inline code (\texttt{\textbackslash inlineCode}): \inlineCode[language=Python]{some code  # comment}
+\end{frame}
+
 
 
 \begin{frame}{Columns}

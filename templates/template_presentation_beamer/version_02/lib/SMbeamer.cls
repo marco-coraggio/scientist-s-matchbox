@@ -29,6 +29,7 @@
 % Text packages ----------------------------------
 \RequirePackage{notomath}            % math font
 \RequirePackage[sfdefault]{roboto}   % text font
+\RequirePackage[lining]{FiraMono}           % monospace font
 \RequirePackage[breakable,skins,raster]{tcolorbox} % boxes
 \RequirePackage[T1]{fontenc}      % for font encodings and compatibility
 \RequirePackage[style=verbose,backend=bibtex,citetracker=false,ibidtracker=false]{biblatex} % citations
