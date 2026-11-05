@@ -66,8 +66,14 @@
 
 % Layout -----------------------------------------
 \setlength{\parskip}{0.7ex}
-\AddToHook{cmd/itemize/after}{\setlength{\itemsep}{0.7ex}}
-\AddToHook{cmd/enumerate/after}{\setlength{\itemsep}{0.7ex}}
+\newcommand{\SMsetItemSep}{%
+  \ifnum\@listdepth>\@ne % if nested list
+    \setlength{\itemsep}{\topsep}%
+  \else
+    \setlength{\itemsep}{0.7ex}%
+  \fi}
+\AddToHook{cmd/itemize/after}{\SMsetItemSep}
+\AddToHook{cmd/enumerate/after}{\SMsetItemSep}
 \setlength{\leftmargini}{10pt}  % left margin with lists
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
@@ -130,7 +136,7 @@
 \setbeamerfont{bibliography entry location}{size=\tiny}
 \setbeamerfont{bibliography entry note}{size=\tiny}
 
-\AtBeginEnvironment{tabular}{\small}
+\AtBeginEnvironment{tabular}{\ifx\@currsize\normalsize\small\fi}
 
 
 % Hyperlinks -------------------------------------
@@ -272,7 +278,6 @@
 
 % FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\myTitle}
-\subtitle{\mySubtitle}
 \author{\myAuthor}
 \date{\myEventAndDate}
 \institute{\myInstitution}
